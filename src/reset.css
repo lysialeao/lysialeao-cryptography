@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+
+    min-height: 100% !important;
+    height: 100%;
+
+    background-color: #fff2ee;
+    color: #fff2ee;
+
+    font-family: 'Open Sans', sans-serif;
+}
