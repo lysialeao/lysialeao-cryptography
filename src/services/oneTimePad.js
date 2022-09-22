@@ -1,8 +1,6 @@
-const oneTimePad = (msg, key) => {
+const oneTimePad = (msg, key, option) => {
 
-    // conversão para binário
-    msg.toString(2)
-    key.toString(2)
+    
 
 }
 
