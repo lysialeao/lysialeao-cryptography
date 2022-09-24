@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import Form from '../../partials/Form/Form'
+import Form from '../Form/Form'
 
 import { Container } from './styles'
 import Header from '../Header/Header'
@@ -18,25 +18,30 @@ const inputs = [
     }
 ]
 
-const OneTimePad = () => {
+const CaesarCipher = () => {
 
     const [ result, setResult ] = useState(null)
 
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        const msg = Number(event.target.msg.value)
+        const msg = event.target.msg.value
         const key = Number(event.target.key.value)
-
-        const resultBinary = msg.toString(2) ^ key.toString(2)
-        const resultHex = parseInt(resultBinary, 2)
-
         const option = event.target.option.value
 
+        const alpha = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
         if(option === 'Criptografar') {
-            console.log(result)
-            setResult(`A mensagem criptografada é: ${resultHex}`)
+
+            const msgVector = msg.split('')
+            let result = []
+
+            for(let i = 0; i<=msgVector.lenght; i++ ){
+                console.log(i)
+                // alpha.find((element) => element === msgVector[i] && result.push(element))
+            }
+
+            // setResult(`A mensagem criptografada é: ${msg.toString(2) ^ key.toString(2)}`)
         }
 
         if(option === 'Descriptografar') {
@@ -54,4 +59,4 @@ const OneTimePad = () => {
     )
 }
 
-export default OneTimePad
+export default CaesarCipher

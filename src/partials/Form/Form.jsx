@@ -1,15 +1,16 @@
 import React from 'react'
-import { Container, FormStyled, Button } from './styles'
+import { Container, FormStyled, Align, Button } from './styles'
 
-const Form = ({ onSubmit}) => {
+const Form = ({ onSubmit, inputs }) => {
     return (
         <Container>
             <FormStyled onSubmit={onSubmit}>
-                <label>Insira sua mensagem:</label>
-                <input type="number" name='msg'/>
-                <label>Insira sua chave</label>
-                <input type="number" name='key'/>
-                <label>Selecione uma opção:</label>
+                { inputs && inputs.map((item) => { return (
+                    <Align>
+                        <label>{item.label}</label>
+                        <input type={item.type} name={item.name}/>
+                    </Align>
+                )})}
                 <select name='option'>
                     <option>Criptografar</option>
                     <option>Descriptografar</option>

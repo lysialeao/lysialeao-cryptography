@@ -17,3 +17,8 @@ export const Button = styled.button`
 
     color: #fff2ee;
 `
+
+export const Align = styled.div`
+    display: flex;
+    flex-direction: row;
+`

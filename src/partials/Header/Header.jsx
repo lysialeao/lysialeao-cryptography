@@ -10,9 +10,9 @@ const Header = () => {
             <Item onClick={() => navigate('/')}>Início</Item>
             <Itens>
                 <Item onClick={() => navigate('/one-time-pad')}>One Time Pad</Item>
-                <Item onClick={() => navigate('/cifra-de-cesar')}>Cifra de Cesar</Item>
-                <Item>Cifra de Hill</Item>
-                <Item>Cifra de Vigenere</Item>
+                <Item onClick={() => navigate('/caesar-cipher')}>Cifra de Cesar</Item>
+                <Item onClick={() => navigate('/hill-cipher')} >Cifra de Hill</Item>
+                <Item onClick={() => navigate('/vigenere-cipher')}>Cifra de Vigenere</Item>
             </Itens>
         </Container>
     )

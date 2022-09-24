@@ -1,24 +1,24 @@
 import React, { useState } from 'react'
 
-import Form from '../../partials/Form/Form'
-
-import { Container } from './styles'
 import Header from '../Header/Header'
+import Form from '../Form/Form'
+import { Container } from './styles'
+
 
 const inputs = [
     {
-        label:'Mensagem',
+        label:'Mensagem: ',
         type: 'text',
         name: 'msg'
     },
     {
-        label:'Número de deslocamento',
-        type: 'number',
+        label:'Chave: ',
+        type: 'text',
         name: 'key'
     }
 ]
 
-const OneTimePad = () => {
+const HillCipher = () => {
 
     const [ result, setResult ] = useState(null)
 
@@ -27,31 +27,24 @@ const OneTimePad = () => {
 
         const msg = Number(event.target.msg.value)
         const key = Number(event.target.key.value)
-
-        const resultBinary = msg.toString(2) ^ key.toString(2)
-        const resultHex = parseInt(resultBinary, 2)
-
         const option = event.target.option.value
 
-
         if(option === 'Criptografar') {
-            console.log(result)
-            setResult(`A mensagem criptografada é: ${resultHex}`)
+            setResult()
         }
 
         if(option === 'Descriptografar') {
-            setResult(`A mensagem criptografada é: ${msg ^ key.toString(2)}`)
+            setResult()
         }
-
     }
 
-    return(
+    return (
         <Container>
             <Header />
             <Form onSubmit={handleSubmit} inputs={inputs}/>
-            { result && result}
+            { result && result }
         </Container>
     )
 }
 
-export default OneTimePad
+export default HillCipher

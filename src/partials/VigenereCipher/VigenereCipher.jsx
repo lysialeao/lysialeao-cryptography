@@ -1,14 +1,25 @@
 import React, { useState } from 'react'
-
-import Form from '../../partials/Form/Form'
-
 import { Container } from './styles'
+
 import Header from '../Header/Header'
+import Form from '../Form/Form'
 
-const CifraDeCesar = () => {
 
-    const [ result, setResult ] = useState(null)
+const inputs = [
+    {
+        label:'Mensagem',
+        type: 'text',
+        name: 'msg'
+    },
+    {
+        label:'Número de deslocamento',
+        type: 'number',
+        name: 'key'
+    }
+]
 
+const VigenereCipher = () => {
+    const [ result, setResult ] = useState()
     const handleSubmit = (event) => {
         event.preventDefault()
 
@@ -16,25 +27,21 @@ const CifraDeCesar = () => {
         const key = Number(event.target.key.value)
         const option = event.target.option.value
 
-
         if(option === 'Criptografar') {
-            setResult(`A mensagem criptografada é: ${msg.toString(2) ^ key.toString(2)}`)
+            setResult()
         }
 
         if(option === 'Descriptografar') {
-            setResult(`A mensagem criptografada é: ${msg ^ key.toString(2)}`)
+            setResult()
         }
-
     }
-
-    return(
+    return (
         <Container>
             <Header />
-            <h1>Cifra de Cesar</h1>
-            <Form onSubmit={handleSubmit}/>
+            <Form onSubmit={handleSubmit} inputs={inputs}/>
             { result && result}
         </Container>
     )
 }
 
-export default CifraDeCesar
+export default VigenereCipher
