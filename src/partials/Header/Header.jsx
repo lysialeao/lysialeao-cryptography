@@ -11,8 +11,8 @@ const Header = () => {
             <Itens>
                 <Item onClick={() => navigate('/one-time-pad')}>One Time Pad</Item>
                 <Item onClick={() => navigate('/caesar-cipher')}>Cifra de Cesar</Item>
-                <Item onClick={() => navigate('/hill-cipher')} >Cifra de Hill</Item>
                 <Item onClick={() => navigate('/vigenere-cipher')}>Cifra de Vigenere</Item>
+                <Item onClick={() => navigate('/hill-cipher')} >Cifra de Hill</Item>
             </Itens>
         </Container>
     )

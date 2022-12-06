@@ -7,7 +7,7 @@ export const Container = styled.div`
 
 export const FormStyled = styled.form`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 10px;
 `
 
@@ -20,5 +20,5 @@ export const Button = styled.button`
 
 export const Align = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 `

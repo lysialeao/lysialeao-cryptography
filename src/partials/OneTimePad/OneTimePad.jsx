@@ -35,7 +35,7 @@ const OneTimePad = () => {
 
 
         if(option === 'Criptografar') {
-            console.log(result)
+            console.log(resultBinary)
             setResult(`A mensagem criptografada é: ${resultHex}`)
         }
 
